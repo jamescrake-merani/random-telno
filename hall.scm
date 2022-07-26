@@ -22,10 +22,7 @@
          (documentation
            ((org-file "README")
             (symlink "README" "README.org")
-            (text-file "COPYING")
-            (directory
-              "doc"
-              ((texi-file "random-phone-number")))))
+            (text-file "COPYING")))
          (infrastructure
            ((scheme-file "guix")
             (text-file ".gitignore")
