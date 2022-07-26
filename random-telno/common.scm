@@ -1,8 +1,4 @@
-#!@GUILE@ \
---no-auto-compile -e main -s
-!#
-
-;; Random Phone Number - generates a random Ofcom drama number.
+;; Random Telephone Number - generates a random Ofcom drama number.
 ;; Copyright (C) 2022  James Crake-Merani
 ;;
 ;; This program is free software: you can redistribute it and/or modify
@@ -18,9 +14,12 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-(use-modules (random-phone-number common))
+(define-module (random-telno common))
 
-(define (main args)
-  (set! *random-state* (random-state-from-platform))
-  (display (format-standard-number))
-  (newline))
+(use-modules (ice-9 format))
+
+(define standard-areas
+  '("0113" "0114" "0115" "0116" "0117" "0118" "0121" "0131" "0141" "0151" "0161"))
+
+(define-public (format-standard-number)
+  (format #f "~a4960~3,'0d" (list-ref standard-areas (random (length standard-areas))) (random 999)))

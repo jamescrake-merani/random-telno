@@ -1,18 +1,18 @@
 dnl -*- Autoconf -*-
 
-AC_INIT(random-phone-number, 0.1)
+AC_INIT(random-telno, 0.1)
 AC_SUBST(HVERSION, "\"0.1\"")
 AC_SUBST(AUTHOR, "\"James Crake-Merani\"")
 AC_SUBST(COPYRIGHT, "'(2022)")
 AC_SUBST(LICENSE, gpl3+)
-AC_CONFIG_SRCDIR(random-phone-number)
+AC_CONFIG_SRCDIR(random-telno)
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([1.12 gnu silent-rules subdir-objects  color-tests parallel-tests -Woverride -Wno-portability])
 AM_SILENT_RULES([yes])
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([pre-inst-env], [chmod +x pre-inst-env])
-AC_CONFIG_FILES([scripts/random-phone-number],[chmod +x scripts/random-phone-number])
+AC_CONFIG_FILES([scripts/random-telno],[chmod +x scripts/random-telno])
 dnl Search for 'guile' and 'guild'.  This macro defines
 dnl 'GUILE_EFFECTIVE_VERSION'.
 GUILE_PKG([3.0 2.2 2.0])

@@ -1,4 +1,4 @@
-bin_SCRIPTS = scripts/random-phone-number
+bin_SCRIPTS = scripts/random-telno
 
 # Handle substitution of fully-expanded Autoconf variables.
 do_subst = $(SED)					\
@@ -32,7 +32,7 @@ SUFFIXES = .scm .go
 .scm.go:
 	$(AM_V_GEN)$(top_builddir)/pre-inst-env $(GUILE_TOOLS) compile $(GUILE_WARNINGS) -o "$@" "$<"
 
-SOURCES = random-phone-number/common.scm
+SOURCES = random-telno/common.scm
 
 TESTS = 
 

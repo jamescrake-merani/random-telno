@@ -1,6 +1,6 @@
 # -*- mode: org; coding: utf-8; -*-
 
-#+TITLE: README for Random-Phone-Number
+#+TITLE: README for Random-TelNo
 
 This program creates a randomly generated Ofcom drama number
 * What is an Ofcom drama number?

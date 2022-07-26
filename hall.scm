@@ -1,5 +1,5 @@
 (hall-description
-  (name "random-phone-number")
+  (name "random-telno")
   (prefix "")
   (version "0.1")
   (author "James Crake-Merani")
@@ -12,13 +12,13 @@
   (skip ())
   (files (libraries
            ((directory
-              "random-phone-number"
+              "random-telno"
               ((scheme-file "common")))))
          (tests ((directory "tests" ())))
          (programs
            ((directory
               "scripts"
-              ((in-file "random-phone-number")))))
+              ((in-file "random-telno")))))
          (documentation
            ((org-file "README")
             (symlink "README" "README.org")
