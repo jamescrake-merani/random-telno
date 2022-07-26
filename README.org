@@ -1,0 +1,29 @@
+# -*- mode: org; coding: utf-8; -*-
+
+#+TITLE: README for Random-Phone-Number
+
+This program creates a randomly generated Ofcom drama number
+* What is an Ofcom drama number?
+Ofcom have a list of numbers which, for the forseeable future, will not be allocated to communication providers. What this means is that if you dial one of the drama numbers, you definitely will not be connected. The numbers are designed to give TV, and Radio shows real-looking numbers that cannot be dialed. They can, however, also be used for other purposes such as placeholder data that you don't want people to be able to use, but you still need them to be a valid UK number.
+* Usage
+The program includes a script ~random-phone-number~ which will generate a random phone number. Simply invoke this on the terminal.
+* Build Dependencies
+- autoconf
+- automake
+- pkg-config
+- texinfo
+- guile-hall
+* Dependencies
+- GNU Guile
+* Build Instructions
+** Build Instructions
+This project uses Guile Hall. In order to build it, you must use the normal autoconf commands
+#+BEGIN_SRC bash
+autoreconf -vfi
+./configure
+make
+sudo make install
+#+END_SRC
+There is also a guix.scm file for you so you can install the program via Guix if that's something you're interested in.
+* Issues & Bugs
+If you encounter any bugs while using the progam, please just create an issue on GitHub.
