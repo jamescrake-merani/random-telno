@@ -30,7 +30,10 @@
   (if area-code
       (if (member area-code standard-areas)
           (format-standard-number)
-          ((cdr (assoc area-code areacode-function))))
+          (let ((areacode-assoc (assoc area-code areacode-function)))
+            (if areacode-assoc
+                ((cdr (assoc area-code areacode-function)))
+                (throw 'invalid-areacode "Area code is invalid" area-code))))
       (format-areacode-number (list-ref all-areas (random (length all-areas))))))
 ;; There seems to be no equivalent of define-public for * so this will have to do.
 (export format-areacode-number)
