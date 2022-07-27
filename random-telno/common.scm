@@ -21,6 +21,9 @@
 (define standard-areas
   '("0113" "0114" "0115" "0116" "0117" "0118" "0121" "0131" "0141" "0151" "0161"))
 
+(define all-areas
+  '("0113" "0114" "0115" "0116" "0117" "0118" "0121" "0131" "0141" "0151" "0161" "020" "0191" "028" "029" "01632"))
+
 (define-public (format-standard-number)
   (format #f "~a4960~3,'0d" (list-ref standard-areas (random (length standard-areas))) (random 999)))
 
