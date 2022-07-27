@@ -24,6 +24,22 @@
 (define all-areas
   '("0113" "0114" "0115" "0116" "0117" "0118" "0121" "0131" "0141" "0151" "0161" "020" "0191" "028" "029" "01632"))
 
+(define areacode-function (list
+                           (cons "020" format-london-number)
+                           (cons "0191" format-tyneside-number)
+                           (cons "028" format-ni-number)
+                           (cons "029" format-cardiff-number)
+                           (cons "01632" format-noarea-number)))
+
+;; FIXME: These nested if statements aren't ideal.
+;; FIXME: There will probably be an infinite loop if the area-code is invalid.
+(define* (format-areacode-number #:optional area-code)
+  (if area-code
+      (if (member area-code standard-areas)
+          format-standard-number
+          (assoc area-code areacode-function))
+      (format-areacode-number (list-ref all-areas (random (length all-areas))))))
+
 (define-public (format-standard-number)
   (format #f "~a4960~3,'0d" (list-ref standard-areas (random (length standard-areas))) (random 999)))
 
