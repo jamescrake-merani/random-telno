@@ -22,5 +22,5 @@
 
 (define (main args)
   (set! *random-state* (random-state-from-platform))
-  (display (format-standard-number))
+  (display (format-areacode-number))
   (newline))
