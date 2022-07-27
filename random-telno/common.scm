@@ -29,8 +29,8 @@
 (define* (format-areacode-number #:optional area-code)
   (if area-code
       (if (member area-code standard-areas)
-          format-standard-number
-          (assoc area-code areacode-function))
+          (format-standard-number)
+          ((cdr (assoc area-code areacode-function))))
       (format-areacode-number (list-ref all-areas (random (length all-areas))))))
 ;; There seems to be no equivalent of define-public for * so this will have to do.
 (export format-areacode-number)
