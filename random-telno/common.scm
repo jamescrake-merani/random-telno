@@ -39,6 +39,8 @@
           format-standard-number
           (assoc area-code areacode-function))
       (format-areacode-number (list-ref all-areas (random (length all-areas))))))
+;; There seems to be no equivalent of define-public for * so this will have to do.
+(export format-areacode-number)
 
 (define-public (format-standard-number)
   (format #f "~a4960~3,'0d" (list-ref standard-areas (random (length standard-areas))) (random 999)))
