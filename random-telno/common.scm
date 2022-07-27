@@ -23,3 +23,15 @@
 
 (define-public (format-standard-number)
   (format #f "~a4960~3,'0d" (list-ref standard-areas (random (length standard-areas))) (random 999)))
+
+(define-public (format-london-number)
+  (format #f "02079460~3,'0d" (random 999)))
+
+(define-public (format-tyneside-number)
+  (format #f "01914980~3,'0d" (random 999)))
+
+(define-public (format-ni-number)
+  (format #f "02896496~3,'0d" (random 999)))
+
+(define-public (format-cardiff-number)
+  (format #f "02920180~3,'0d" (random 999)))
