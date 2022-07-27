@@ -35,3 +35,6 @@
 
 (define-public (format-cardiff-number)
   (format #f "02920180~3,'0d" (random 999)))
+
+(define-public (format-noarea-number)
+  (format #f "01632960~3,'0d" (random 999)))
