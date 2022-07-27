@@ -25,7 +25,6 @@
   '("0113" "0114" "0115" "0116" "0117" "0118" "0121" "0131" "0141" "0151" "0161" "020" "0191" "028" "029" "01632"))
 
 ;; FIXME: These nested if statements aren't ideal.
-;; FIXME: There will probably be an infinite loop if the area-code is invalid.
 (define* (format-areacode-number #:optional area-code)
   (if area-code
       (if (member area-code standard-areas)
