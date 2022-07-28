@@ -27,6 +27,7 @@
                         (area (value #t))))
          (options (getopt-long args option-spec))
          (amount (option-ref options 'amount "1"))
-         (area-code (option-ref options 'area #f)))
+         (area-name (option-ref options 'area #f))
+         (area-code (if (member area-name all-areas) area-name (match-areaname area-name))))
     (display (string-join (generate-n-phone-numbers (string->number amount) area-code) "\n"))
     (newline)))
