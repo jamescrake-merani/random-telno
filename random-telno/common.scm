@@ -18,13 +18,13 @@
 
 (use-modules (ice-9 format))
 
-(define standard-areas
+(define-public standard-areas
   '("0113" "0114" "0115" "0116" "0117" "0118" "0121" "0131" "0141" "0151" "0161"))
 
-(define all-areas
+(define-public all-areas
   '("0113" "0114" "0115" "0116" "0117" "0118" "0121" "0131" "0141" "0151" "0161" "020" "0191" "028" "029" "01632"))
 
-(define areaname-code '(("leeds" . "0113")
+(define-public areaname-code '(("leeds" . "0113")
                         ("sheffield" . "0114")
                         ("nottingham" . "0115")
                         ("leicester" . "0116")
@@ -44,7 +44,7 @@
                         ("cardiff" . "029")
                         ("none" . "01632")))
 
-(define (match-areaname name)
+(define-public (match-areaname name)
   (assoc (string-downcase name) areaname-code))
 
 (define* (generate-n-phone-numbers n #:optional area-code)
