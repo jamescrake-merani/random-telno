@@ -11,6 +11,10 @@ Copyright © (2022) James Crake-Merani <james[at]jamescm[dot]co[dot]uk>
 
 Please send Random-TelNo bug reports to <james[at]jamescm[dot]co[dot]uk>
 
+* 0.3
+ - Multiple phone numbers can be generated at once.
+ - There are now command line arguments for specifiying how many numbers to generate, and the area code.
+ - Exception handling has been implemented to handle bad user input.
 * 0.2
 The program can now generate phone numbers in all the areas given drama numbers by Ofcom.
 * Publication at 0.1
