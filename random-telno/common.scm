@@ -45,7 +45,7 @@
                         ("none" . "01632")))
 
 (define-public (match-areaname name)
-  (assoc (string-downcase name) areaname-code))
+  (cdr (assoc (string-downcase name) areaname-code)))
 
 (define* (generate-n-phone-numbers n #:optional area-code)
   (letrec ((loop (lambda (n-remaining numbers)
