@@ -45,10 +45,10 @@
                         ("none" . "01632")))
 
 (define-public (match-areaname name)
-  (let ((value (cdr (assoc (string-downcase name) areaname-code))))
+  (let ((value (assoc (string-downcase name) areaname-code)))
     (if (not value)
         (throw 'invalid-areaname "That area name is invalid")
-        value)))
+        (cdr value))))
 
 (define* (generate-n-phone-numbers n #:optional area-code)
   (letrec ((loop (lambda (n-remaining numbers)
