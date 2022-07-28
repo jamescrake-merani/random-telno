@@ -44,6 +44,9 @@
                         ("cardiff" . "029")
                         ("none" . "01632")))
 
+(define (match-areaname name)
+  (assoc (string-downcase name) areaname-code))
+
 (define* (generate-n-phone-numbers n #:optional area-code)
   (letrec ((loop (lambda (n-remaining numbers)
                    (if (<= n-remaining 0)
