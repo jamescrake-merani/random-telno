@@ -24,15 +24,16 @@
 (define all-areas
   '("0113" "0114" "0115" "0116" "0117" "0118" "0121" "0131" "0141" "0151" "0161" "020" "0191" "028" "029" "01632"))
 
-(define-public (generate-n-phone-numbers n)
+(define* (generate-n-phone-numbers n #:optional area-code)
   (letrec ((loop (lambda (n-remaining numbers)
                    (if (<= n-remaining 0)
                      numbers
-                     (let ((number-candidate (format-standard-number)))
+                     (let ((number-candidate (format-areacode-number area-code)))
                        (if (member number-candidate numbers)
                            (loop n-remaining numbers)
                            (loop (1- n-remaining) (cons number-candidate numbers))))))))
     (loop n '())))
+(export generate-n-phone-numbers)
 
 (define* (format-areacode-number #:optional area-code)
   (if area-code

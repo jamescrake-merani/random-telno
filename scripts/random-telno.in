@@ -23,8 +23,10 @@
 
 (define (main args)
   (set! *random-state* (random-state-from-platform))
-  (let* ((option-spec '((amount (single-char #\a) (value #t))))
+  (let* ((option-spec '((amount (single-char #\a) (value #t))
+                        (area (value #t))))
          (options (getopt-long args option-spec))
-         (amount (option-ref options 'amount "1")))
-    (display (string-join (generate-n-phone-numbers (string->number amount)) "\n"))
+         (amount (option-ref options 'amount "1"))
+         (area-code (option-ref options 'area #f)))
+    (display (string-join (generate-n-phone-numbers (string->number amount) area-code) "\n"))
     (newline)))
