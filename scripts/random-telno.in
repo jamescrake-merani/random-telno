@@ -18,9 +18,13 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-(use-modules (random-telno common))
+(use-modules (random-telno common)
+             (ice-9 getopt-long))
 
 (define (main args)
   (set! *random-state* (random-state-from-platform))
-  (display (format-areacode-number))
-  (newline))
+  (let* ((option-spec '((amount (single-char #\a) (value #t))))
+         (options (getopt-long args option-spec))
+         (amount (option-ref options 'amount "1")))
+    (display (string-join (generate-n-phone-numbers (string->number amount)) "\n"))
+    (newline)))
