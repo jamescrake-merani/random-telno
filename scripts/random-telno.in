@@ -30,8 +30,14 @@
                      (amount (option-ref options 'amount "1"))
                      (area-name (option-ref options 'area #f))
                      (area-code (if (or (member area-name all-areas) (not area-name)) area-name (match-areaname area-name))))
-                (display (string-join (generate-n-phone-numbers (string->number amount) area-code) "\n"))
-                (newline)))
+                (let ((amount-str (string->number amount)))
+                  (if (not amount-str)
+                      (begin
+                        (display "Amount must be a number.")
+                        (newline))
+                      (begin
+                        (display (string-join (generate-n-phone-numbers (string->number amount) area-code) "\n"))
+                        (newline))))))
     (lambda (key . args)
       (cond
        ((equal? key 'invalid-areaname) (display "That area name is invalid.") (newline))
